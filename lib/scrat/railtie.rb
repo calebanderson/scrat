@@ -2,6 +2,7 @@ module Scrat
   class Railtie < ::Rails::Railtie
     config.after_initialize do
       Object.extend(Scrat::Context)
+      Object.include(Scrat::Context)
       irb_main.extend(Scrat::Context)
 
       ReloaderHooks.register do
