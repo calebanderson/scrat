@@ -8,7 +8,6 @@ module Scrat
       raise(Errno::ENOENT, file.to_s) unless File.exist?(file)
 
       @file = Pathname(SharedHelpers.sanitize_for_link(file).first)
-      # ConsoleHelpers.mount(self)
     end
 
     def inspect
