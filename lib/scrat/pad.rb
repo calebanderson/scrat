@@ -23,7 +23,7 @@ module Scrat
       surface
       dive(binding)
       print_link
-      eval(file.read, workspace.binding, file.to_s, 1) # rubocop:disable Security/Eval
+      eval(file.read, current_workspace.binding, file.to_s, 1) # rubocop:disable Security/Eval
       nil # Use #return in the scratch file to return a different value
     end
 
