@@ -54,7 +54,7 @@ module Scrat
       def find_filename(arg)
         case arg
         when Integer then find_by_integer(arg)
-        when String then find_by_string(arg)
+        when String, Symbol then find_by_string(arg.to_s)
         end
       end
 
