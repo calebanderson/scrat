@@ -73,7 +73,9 @@ module Scrat
       end
 
       def all
-        directory.glob('*.rb').sort_by(&:mtime)
+        # Pathname#glob was added in Ruby 2.5.5
+        # directory.glob('*.rb').sort_by(&:mtime)
+        Dir[directory / '*.rb'].map(&method(:Pathname)).sort_by(&:mtime)
       end
 
       def directory

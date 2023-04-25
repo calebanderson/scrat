@@ -6,7 +6,7 @@ module Scrat
       irb_main.extend(Scrat::Context)
 
       ReloaderHooks.register do
-        current_workspace.main.submerge if current_workspace.main.is_a?(Pad)
+        current_workspace.main.submerge if current_workspace&.main.is_a?(Pad)
       end
     end
   end
